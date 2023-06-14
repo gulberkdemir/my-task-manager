@@ -12,7 +12,10 @@ import {FilterEnum} from "../types/application.contants";
 export class MainComponent {
   visibleTodos$: Observable<TodoInterface[]>;
   noTodoClass$: Observable<boolean>;
+  isAllTodosSelected$: Observable<boolean>;
   constructor(private todoService: TodosService) {
+    this.isAllTodosSelected$ = this.todoService.todos$.pipe(map((todos) =>
+      todos.every((todo) => todo.isCompleted)));
     this.noTodoClass$ = this.todoService.todos$.pipe(map(
       (todo) => todo.length === 0
     ))
@@ -27,6 +30,13 @@ export class MainComponent {
         return todos;
       })
     );
+
+  }
+
+  toggleAllTodos(event: Event){
+    const target = event.target as HTMLInputElement;
+    this.todoService.toggleAll(target.checked);
+
   }
 
 }
