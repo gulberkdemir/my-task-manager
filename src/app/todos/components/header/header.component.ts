@@ -20,6 +20,7 @@ export class HeaderComponent {
   addTodo(): void {
     console.log('addToDo', this.text)
     this.todoService.addTodo(this.text);
+    this.text = '';
   }
 
 }

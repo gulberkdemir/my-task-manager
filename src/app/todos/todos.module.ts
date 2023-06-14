@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {FormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import { MainComponent } from './components/main/main.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     TodosComponent,
-    HeaderComponent
+    HeaderComponent,
+    MainComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule, MatIconModule, MatButtonModule],
 })
