@@ -6,8 +6,8 @@
            autofocus
            [(ngModel)]="text"
            (keyup)="changeText($event)"
-           (keyup.enter)="addTask()"/>
-  <button mat-fab extended color="accent" (click)="addTask()">
+           (keyup.enter)="addTodo()"/>
+  <button mat-fab extended color="accent" (click)="addTodo()">
     <mat-icon >add_task</mat-icon>
     Add
   </button>
