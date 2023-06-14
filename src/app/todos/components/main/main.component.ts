@@ -11,7 +11,11 @@ import {FilterEnum} from "../types/application.contants";
 })
 export class MainComponent {
   visibleTodos$: Observable<TodoInterface[]>;
+  noTodoClass$: Observable<boolean>;
   constructor(private todoService: TodosService) {
+    this.noTodoClass$ = this.todoService.todos$.pipe(map(
+      (todo) => todo.length === 0
+    ))
 
     this.visibleTodos$ = combineLatest(this.todoService.todos$, this.todoService.filter$).pipe(
       map(([todos, filter]: [ TodoInterface[], FilterEnum ]) => {

@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import { MainComponent } from './components/main/main.component';
+import { TodoComponent } from './components/main/todo/todo.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   declarations: [
     TodosComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    TodoComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), FormsModule, MatIconModule, MatButtonModule],
 })
