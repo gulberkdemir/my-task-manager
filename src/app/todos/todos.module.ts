@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodosComponent } from './components/todos/todos.component';
+import {RouterModule, Routes} from "@angular/router";
+import { HeaderComponent } from './components/header/header.component';
+import {FormsModule} from "@angular/forms";
 
-
+const routes: Routes = [
+  {
+    path: '',
+    component: TodosComponent,
+  },
+];
 
 @NgModule({
   declarations: [
-    TodosComponent
+    TodosComponent,
+    HeaderComponent
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
 })
 export class TodosModule { }
