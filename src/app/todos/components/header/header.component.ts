@@ -11,7 +11,12 @@ export class HeaderComponent {
   changeText(event: Event): void {
     const target = event.target as HTMLInputElement;
     console.log(target.value);
+    this.text = target.value
 
+  }
+
+  addTask(): void {
+    console.log('addToDo', this.text)
   }
 
 }

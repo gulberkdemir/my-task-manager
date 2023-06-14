@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {TodosModule} from "./todos/todos.module";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {TodosModule} from "./todos/todos.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodosModule
+    TodosModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

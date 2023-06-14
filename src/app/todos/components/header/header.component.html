@@ -1,4 +1,15 @@
 <header>
   <h1>todos</h1>
-  <input class="new-todo" placeholder="What needs to be done" autofocus [(ngModel)]="text" (keyup)="changeText($event)"/>
+  <div class="search-wrapper">
+    <input class="new-todo"
+           placeholder="What needs to be done"
+           autofocus
+           [(ngModel)]="text"
+           (keyup)="changeText($event)"
+           (keyup.enter)="addTask()"/>
+  <button mat-fab extended color="accent" (click)="addTask()">
+    <mat-icon >add_task</mat-icon>
+    Add
+  </button>
+  </div>
 </header>

@@ -52,6 +52,10 @@ button {
 .hidden {
   display: none;
 }
+.search-wrapper{
+  display:flex;
+  align-items: center;
+}
 .todoapp {
   background: #fff;
   margin: 130px 0 40px 0;
@@ -488,3 +492,6 @@ hr {
     }
   }
 }
+//
+//html, body { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
