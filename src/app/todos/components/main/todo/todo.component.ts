@@ -5,7 +5,7 @@ import {
   Input,
   OnChanges,
   OnInit,
-  Output,
+  Output, Renderer2,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -26,14 +26,17 @@ export class TodoComponent implements OnInit, OnChanges{
 
   @ViewChild('textInput') textInput?: ElementRef;
 
-  constructor(private todoService: TodosService) {
+  constructor(private todoService: TodosService, private renderer: Renderer2) {
 
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes['isEditting'].currentValue);
-    if(changes['isEditting'].currentValue){
-      this.textInput?.nativeElement.focus();
+
+    console.log('changes', changes);
+    if (changes['isEditting'].currentValue) {
+      setTimeout(() => {
+        this.textInput?.nativeElement.focus();
+      }, 0);
     }
 
   }
