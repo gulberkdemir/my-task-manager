@@ -13,6 +13,7 @@ export class MainComponent {
   visibleTodos$: Observable<TodoInterface[]>;
   noTodoClass$: Observable<boolean>;
   isAllTodosSelected$: Observable<boolean>;
+  editingId: string | null = null;
   constructor(private todoService: TodosService) {
     this.isAllTodosSelected$ = this.todoService.todos$.pipe(map((todos) =>
       todos.every((todo) => todo.isCompleted)));
@@ -36,6 +37,12 @@ export class MainComponent {
   toggleAllTodos(event: Event){
     const target = event.target as HTMLInputElement;
     this.todoService.toggleAll(target.checked);
+
+  }
+
+  setEdittingId(editingId: string | null): void{
+    console.log(editingId);
+    this.editingId = editingId;
 
   }
 

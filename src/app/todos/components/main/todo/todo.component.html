@@ -1,2 +1,11 @@
-<li>{{todo?.text}}</li>
-<span>{{todo?.isCompleted}}</span>
+<li [ngClass]="{editing: isEditting}">
+  <div class="view">
+    <input class="toggle" type="checkbox">
+    <label (dblclick)="setTodoInEditMode()">{{todo?.text}}</label>
+    <button class="destroy"></button>
+  </div>
+  <ng-container *ngIf="isEditting">
+    <input class="edit">
+  </ng-container>
+</li>
+
