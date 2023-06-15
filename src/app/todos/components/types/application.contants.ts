@@ -4,5 +4,4 @@ export enum FilterEnum {
 
   completed ='completed'
 
-
 }
