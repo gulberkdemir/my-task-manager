@@ -1,4 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {TodoInterface} from "../../types/todo.model";
 import {TodosService} from "../../services/todos.service";
 
@@ -7,14 +17,24 @@ import {TodosService} from "../../services/todos.service";
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent implements OnInit{
+export class TodoComponent implements OnInit, OnChanges{
   @Input() todo?: TodoInterface ;
   @Input() isEditting?: boolean ;
   @Output() setEdittingId = new EventEmitter<string | null>();
 
   editingText? = '';
 
+  @ViewChild('textInput') textInput?: ElementRef;
+
   constructor(private todoService: TodosService) {
+
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes['isEditting'].currentValue);
+    if(changes['isEditting'].currentValue){
+      this.textInput?.nativeElement.focus();
+    }
 
   }
 
