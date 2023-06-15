@@ -35,6 +35,15 @@ Active Filter
 Completed Filter
 <img width="1449" alt="image" src="https://github.com/gulberkdemir/my-task-manager/assets/62015829/fc7a85f8-15f7-408c-a579-3e109aa6d580">
 
+Edit Task
+<img width="1449" alt="image" src="https://github.com/gulberkdemir/my-task-manager/assets/62015829/b9a2b087-8cdf-43e1-83cb-e9d08c74ead9">
+<img width="1449" alt="image" src="https://github.com/gulberkdemir/my-task-manager/assets/62015829/5d44e3c0-de0e-4e36-b433-f93bbc40ee55">
+
+Select All Tasks
+<img width="1449" alt="image" src="https://github.com/gulberkdemir/my-task-manager/assets/62015829/2e7b48e9-1cd2-4b42-b334-4d7525e997e9">
+
+
+
 
 
 
